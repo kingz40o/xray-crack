@@ -79,7 +79,7 @@ var (
 )
 
 func main() {
-	validTime, _ := time.Parse("2006-01-02 15:04:05", "2021-01-01 00:00:00")
+	validTime, _ := time.Parse("2006-01-02 15:04:05", "2099-01-01 00:00:00")
 	nowTime := time.Now()
 	if nowTime.After(validTime) {
 		panic("本工具已失效")
@@ -231,7 +231,7 @@ func parseAlready(licenseFile string) {
 }
 
 func genNew(name string) {
-	validTime, err := time.Parse("2006-01-02 15:04:05", "2099-09-09 00:00:00")
+	validTime, err := time.Parse("0000-00-00 00:00:00", "0000-00-00 00:00:00")
 
 	license := License{
 		LicenseId:      "00000000000000000000000000000000",
